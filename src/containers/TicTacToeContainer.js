@@ -10,7 +10,7 @@ constructor(props){
             gameOver: false
     }
     this.checkTriple = this.checkTriple.bind(this)
-    // this.onClick = this.onClick.bind(this);
+    this.handleSelectedSquare = this.handleSelectedSquare.bind(this);
 }
 
 // xMoves(gridRef) 
@@ -45,12 +45,20 @@ checkTriple(config){
             this.state.gameGrid[config[2]]!=="B")
 }
 
+handleSelectedSquare(letter){
+    
+}
+
+
+
+
+
 render(){
     console.log(this.checkGame())
     return(
     <div>
     <h1>Tic Tac Toe</h1> 
-    <TableComponent squares={this.state.gameGrid}/> 
+    <TableComponent squares={this.state.gameGrid} onClick={this.handleSelectedSquare}/> 
     
     </div>
     )
